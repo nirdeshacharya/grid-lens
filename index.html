@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grid Lens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside id="panel">
+  <header>
+    <div class="mast">
+      <h1>Grid Lens</h1>
+      <span id="asof"></span>
+    </div>
+    <p class="strap">Scottish and Southern Electricity Networks distribution area, from open data</p>
+    <nav id="tabs" role="tablist">
+      <button role="tab" data-tab="capacity" aria-selected="true">Capacity</button>
+      <button role="tab" data-tab="outages">Outages<span class="count" id="outage-count"></span></button>
+      <button role="tab" data-tab="generators">Generation</button>
+      <button role="tab" data-tab="reliability">Faults</button>
+      <button role="tab" data-tab="flexibility">Flexibility</button>
+      <button role="tab" data-tab="carbon">Carbon</button>
+    </nav>
+  </header>
+  <div id="scroll">
+    <div id="detail" hidden></div>
+    <section id="tab-capacity" class="tab"></section>
+    <section id="tab-outages" class="tab" hidden></section>
+    <section id="tab-generators" class="tab" hidden></section>
+    <section id="tab-reliability" class="tab" hidden></section>
+    <section id="tab-flexibility" class="tab" hidden></section>
+    <section id="tab-carbon" class="tab" hidden></section>
+  </div>
+</aside>
+<div id="map"></div>
+<div id="tip" hidden></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
